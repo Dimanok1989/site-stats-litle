@@ -1,6 +1,6 @@
 <?php
 
-namespace Kolgaev\SiteStatsLite;
+namespace Kolgaev\SiteStatsLitle;
 
 use mysqli;
 

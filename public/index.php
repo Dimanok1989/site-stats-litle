@@ -6,7 +6,7 @@ if (file_exists(__DIR__ . "/config.php"))
     require __DIR__ . "/config.php";
 
 try {
-    $check = (new \Kolgaev\SiteStatsLite\IP)->check();
+    $check = (new \Kolgaev\SiteStatsLitle\IP)->check();
 
     if (getenv("KOLGAEV_STATS_DEBUG")) {
         echo json_encode($check);

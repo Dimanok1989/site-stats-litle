@@ -1,0 +1,17 @@
+{
+    "name": "kolgaev/site-stats-lite",
+    "description": "Site stat for old version php",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kolgaev\\SiteStatsLite\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dimanok1989",
+            "email": "kolgaev@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -124,7 +124,7 @@ class IP extends Database
     public function checkBlockIpAddr()
     {
         try {
-            $result = $this->mysqli->query("SELECT * FROM `blocks` WHERE `host` = '{$this->ip} AND `is_block` = 1'");
+            $result = $this->mysqli->query("SELECT * FROM `blocks` WHERE `host` = '{$this->ip}' AND `is_block` = 1");
             return $this->ip_block = $result->num_rows > 0;
         } catch (Exception $e) {
             $this->errors[] = $e->getMessage();

@@ -159,9 +159,22 @@ class IP extends Database
     public function checkAutoBlock()
     {
         try {
+            $num_rows = 0;
             $date = date("Y-m-d");
             $result = $this->mysqli->query("SELECT * FROM `automatic_blocks` WHERE `ip` = '{$this->ip}' AND `date` = '{$date}'");
-            return $this->auto_block = $result->num_rows > 0;
+
+            while ($row = $result->fetch_assoc()) {
+
+                $drop_block = $row['drop_block'] ?? null;
+
+                if (in_array($drop_block, ["0", "1"])) {
+                    $num_rows += ($drop_block == 0 ? 1 : 0);
+                } else {
+                    $num_rows++;
+                }
+            }
+
+            return $this->auto_block = $num_rows > 0;
         } catch (Exception $e) {
             $this->errors[] = $e->getMessage();
             return null;
